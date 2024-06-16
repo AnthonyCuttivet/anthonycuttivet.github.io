@@ -48,7 +48,7 @@ $(window).on('load', function() {
 	$('.nav-switch').on('click', function () {
 		$('.main-menu').slideToggle();
 	});
-	
+
 
 	/*------------------
 		Background Set
@@ -78,14 +78,14 @@ $(window).on('load', function() {
         autoplay: false,
         onInitialized: function() {
         	var a = this.items().length;
-            $("#snh-1").html("<span>1</span>/<span>" + a + "</span><br /><p style=\"color:#a2a2a2\">Cliquez ou slidez</p>");
+            $("#snh-1").html("<span>1</span>/<span>" + a + "</span><br /><p style=\"color:#ffffff\">Cliquez ou glissez</p>");
         }
     }).on("changed.owl.carousel", function(a) {
 		var index = a.item.index;
         var b = --a.item.index, a = a.item.count;
     	$("#snh-1").html("<span> "+ (index + 1) + "</span>/<span>" + a + "</span>");
 	});
-	
+
 
 	/*------------------
 		Portfolio Slider
@@ -115,7 +115,7 @@ $(window).on('load', function() {
         var b = --a.item.index, a = a.item.count;
     	$("#snh-1").html("<span> "+ (1 > b ? b + a : b > a ? b - a : b) + "</span>/<span>" + a + "</span>");
 	});
-	
+
 
 	/*----------------------
 		Portfolio item size
