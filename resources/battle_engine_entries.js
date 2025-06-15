@@ -1,7 +1,7 @@
 const data = [
   {
     title:
-      "<span style=color:var(--accent);>※</span> Entry 0 : All you need is Skill",
+      "<span style=color:var(--accent);>※</span> Entry 0 : All I need is Skill",
     summary: "08 April 2025 - 22:47  「Starter」",
     content: `
     <div class="entry-block">
