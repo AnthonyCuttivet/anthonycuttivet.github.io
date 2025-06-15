@@ -13,19 +13,20 @@ const data = [
         <p>In the end, to make this a reality, <strong>All I need is Skill</strong>.</p>
       </div>
       <div class="entry-media">
-      <div class="video-wrapper">
-        <iframe
-        src="https://www.youtube.com/embed/YveFmUyvdeo"
-        title="Demo Video"
-        frameborder="0"
-        allowfullscreen>
-        </iframe>
-      </div>
+        <div class="video-wrapper">
+          <iframe
+          src="https://www.youtube.com/embed/YveFmUyvdeo"
+          title="Demo Video"
+          frameborder="0"
+          allowfullscreen>
+          </iframe>
+        </div>
         <small>All current features available in the Engine</small>
       </div>
     </div>
     `,
-    image: "https://picsum.photos/id/1011/1600/900",
+    image: "../img/battle_engine/banners/pso2.jpg",
+    image_offset:40,
   },
   {
     title:
@@ -43,9 +44,14 @@ const data = [
         <p>Default packs every standard animation an entity will need like "idle", "dash", "cast", "death" while Sword packs any sword-related animation: "sword_combo_1", "sword_combo_2", "sword_combo_3", "sword_combo_dash_attack", "sword_combo_CaliburStreak".</p>
         <p>This opens some interesting answers to popular gameplay situations: the player is in the water and needs to swim instead of walk? Just swap the "default" animlib for the "default_water" one, and swap back once out of the water.</p>
       </div>
+      <div class="entry-media">
+        <img src="../img/battle_engine/animlibs.png" alt="Animlibs setup in engine" />
+        <small>How Animlibs are arranged in-engine</small>
+      </div>
     </div>
     `,
-    image: "https://picsum.photos/id/1011/1600/900",
+    image: "../img/battle_engine/banners/p3r.png",
+    image_offset: 78,
   },
   {
     title: "<span style=color:var(--accent);>※</span> Entry 2 : 2D Root Motion",
@@ -64,13 +70,14 @@ const data = [
       </div>
       <div class="entry-media">
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/Mw-oOGoG4H0" title="2D Root Motion in Godot" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/akdD55vQLXE" title="2D Root Motion in Godot" allowfullscreen></iframe>
         </div>
         <small>Basic handmade 2D Root Motion features for Godot Engine, full of flaws (for now).</small>
       </div>
     </div>
     `,
-    image: "https://picsum.photos/id/1011/1600/900",
+    image: "../img/battle_engine/banners/kzero.png",
+    image_offset:10
   },
   {
     title:
@@ -80,6 +87,8 @@ const data = [
     <div class="entry-block">
       <div class="entry-content-text">
         <p>To keep things clean and work in a separated environment we went ahead and made Fortuna, our Custom Animation System for Godot.</p>
+        <p>Having a dedicated Animation System opens the door to many things, especially for animation properties rewriting and tools! </p>
+        <p>Even if this entry is more dedicated to real-time combat animation handling, Fortuna is being developped with other uses in mind, and supporting retro, turn based combat is another goal. Before starting this project, we achieved an automatic spritesheet unpacking tool directly in godot, which also creates every subsequent animations. This tool serves as a proof of concept for in-engine animation tools that can make others iterate more quickly, by givieng them means to test their work in-editor directly. A short showcase is available on the side if you are interested.</p>
         <p>Handling animation cancels and overrides is a pain in the ass most of the time while being one of the core gameplay mechanics of high intensity combat. There’s something beautiful in executing a perfect animation cancel to maximise efficiency, while empowering the player by giving them full control over their character.</p>
         <p>A recurring issue in Gameplay Programming is handling the behaviour of a character when two different animations are triggered almost simultaneously, oftentimes leading to visual artifacts at best and blocking the character’s animation state at worst.</p>
         <p>For example, let’s say we want to make a heavy hammer attack and strongly emphasize the weight of the animation. We make it so that the recovery portion of the animation cannot be cancelled by the player in order to really feel the aftermath of slamming a 100 kg hammer onto the ground.</p>
@@ -93,13 +102,17 @@ const data = [
       </div>
       <div class="entry-media">
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/0XDEADEAD" title="2D Root Motion in Godot" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/IhpG6YRv9AY" title="2D Root Motion in Godot" allowfullscreen></iframe>
         </div>
-        <small>One of Fortuna's features used in another project : Automatic spritesheet unpacking and creation of animations.</small>
+        <small>Only 4mins to setup Squall's attack animations thanks to Fortuna! <br>\n Assets credits ©Final Fantasy Brave Exvius & Square Enix.</small>
+        <br/>
+        <img src="../img/battle_engine/fortuna_anim_override.png" alt="Animlibs setup in engine" />
+        <small>Fortuna Animation Player internal priority-based play function.</small>
       </div>
     </div>
     `,
-    image: "https://picsum.photos/id/1011/1600/900",
+    image: "../img/battle_engine/banners/ff8_visions.webp",
+    image_offset: 25,
   },
   {
     title:
@@ -129,7 +142,8 @@ const data = [
       </div>
     </div>
     `,
-    image: "https://picsum.photos/id/1011/1600/900",
+    image: "../img/battle_engine/banners/hades2.webp",
+    image_offset: 81
   },
   {
     title:
@@ -152,7 +166,8 @@ const data = [
       </div>
     </div>
     `,
-    image: "https://picsum.photos/id/1011/1600/900",
+    image: "../img/battle_engine/banners/smash.avif",
+    image_offset: 14
   },
   {
     title:
@@ -181,7 +196,8 @@ const data = [
       </div>
     </div>
     `,
-    image: "https://picsum.photos/id/1011/1600/900",
+    image: "../img/battle_engine/banners/mh.jpg",
+    image_offset: 60
   },
   {
     title:
@@ -233,7 +249,8 @@ const data = [
         </div>
       </div>
       `,
-    image: "https://picsum.photos/id/1011/1600/900",
+      image: "../img/battle_engine/banners/ggstrive.avif",
+    image_offset:55
   },
   {
     title:
@@ -257,11 +274,12 @@ const data = [
         <p>Commands are also easily stackable. You could store each executed Command in an array and have a replayable history of every action the player did. Perfect if you want to make a time-rewind mechanic or a replay feature!</p>
       </div>
       <div class="entry-media">
-        <img src="command-pattern-diagram.png" alt="Command and Triggerable" />
-        <small>The Command/Triggerable pipeline that decouples input, events, and logic.</small>
+          <img src="../img/battle_engine/command.png" alt="CommandUseItem code snippet" />
+          <small>CommandUseItem illustration snippet.</small>
       </div>
     </div>
     `,
-    image: "https://picsum.photos/id/1011/1600/900",
+    image: "../img/battle_engine/banners/patapon.jpg",
+    image_offset:65
   },
 ];
