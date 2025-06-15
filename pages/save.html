@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apple Game Engine — R&D Journal</title>
+  <style>
+    :root {
+      --primary: #ffffff;
+      --background: #000000;
+      --accent: #00ffd5;
+      --muted: #aaaaaa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: var(--background);
+      color: var(--primary);
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 40px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #222;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .section:hover::before {
+      opacity: 0.1;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, #00ffd533, transparent);
+      z-index: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .section-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: slideUp 1.2s ease forwards;
+    }
+
+    .section-content h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    .section-content p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      color: var(--muted);
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    .media {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.5);
+    }
+
+    .entry-detail {
+      position: fixed;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      height: 100vh;
+      background: #111;
+      padding: 80px;
+      display: flex;
+      flex-direction: column;
+      transition: left 0.6s ease;
+      z-index: 2000;
+      overflow-y: auto;
+    }
+
+    .entry-detail.active {
+      left: 0;
+    }
+
+    .close-btn {
+      align-self: flex-end;
+      font-size: 2rem;
+      color: var(--accent);
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    footer {
+      padding: 60px 80px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+  <script>
+    function toggleDetail(index) {
+      document.querySelectorAll('.entry-detail').forEach((el, i) => {
+        el.classList.remove('active');
+      });
+      document.querySelector(`.entry-detail[data-index='${index}']`).classList.add('active');
+    }
+    function closeDetail() {
+      document.querySelectorAll('.entry-detail').forEach(el => el.classList.remove('active'));
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Apple Game Engine</h1>
+    <span style="font-size: 1rem; color: var(--accent);">R&D Journal</span>
+  </header>
+
+  <section class="section" onclick="toggleDetail(0)">
+    <video class="media" autoplay muted loop>
+      <source src="demo_kinetic.mp4" type="video/mp4">
+    </video>
+    <div class="section-content">
+      <h2>Introducing Kinetic: Animation Meets Physics</h2>
+      <p>Exploring how expressive tweening collides with physical motion curves.</p>
+    </div>
+  </section>
+  <div class="entry-detail" data-index="0">
+    <span class="close-btn" onclick="closeDetail()">&times;</span>
+    <h2 style="margin-bottom: 20px;">Full Entry: Kinetic</h2>
+    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--muted);">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus, sapien sit amet sodales rutrum, nunc ex porta lacus, eget facilisis nulla lorem at quam. Etiam vitae mattis arcu.
+    </p>
+  </div>
+
+  <section class="section" onclick="toggleDetail(1)">
+    <iframe class="media" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo" frameborder="0" allowfullscreen></iframe>
+    <div class="section-content">
+      <h2>Immersive Audio and Dynamic Light</h2>
+      <p>Lighting systems respond to soundwaves for rhythmic intensity.</p>
+    </div>
+  </section>
+  <div class="entry-detail" data-index="1">
+    <span class="close-btn" onclick="closeDetail()">&times;</span>
+    <h2 style="margin-bottom: 20px;">Full Entry: Audio + Light</h2>
+    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--muted);">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus, sapien sit amet sodales rutrum, nunc ex porta lacus, eget facilisis nulla lorem at quam. Etiam vitae mattis arcu.
+    </p>
+  </div>
+
+  <footer>
+    &copy; 2025 Apple Inc. All rights reserved.
+  </footer>
+</body>
+</html>
